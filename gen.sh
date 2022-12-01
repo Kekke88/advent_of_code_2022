@@ -10,6 +10,7 @@ cd $DAY
 
 echo "[*] Creating files.."
 touch $DAY.input
-touch $DAY.py
+touch $DAY.example.input
+cp ../template $DAY.py
 
 echo "[*] Done!"

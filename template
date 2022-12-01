@@ -1,0 +1,16 @@
+import os
+import sys
+ 
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+sys.path.append(parent)
+
+with open('') as f:
+    for line in f.readlines():
+        break
+
+part_one = "WIP"
+part_two = "WIP"
+
+print(f"Part 1: {part_one}")
+print(f"Part 2: {part_two}")
