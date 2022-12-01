@@ -26,8 +26,10 @@ elves.sort()
 
 part_one = elves.pop().total_calories
 part_one_time_in_ms = (time.time() - start) * 1000
-print(f"Part 1: {part_one}, execution time: {part_one_time_in_ms}ms")
+print(f"Part 1: {part_one}, execution time: {part_one_time_in_ms} ms")
 
 part_two = part_one + elves.pop().total_calories + elves.pop().total_calories
-part_two_time_in_ms = (time.time() - start) * 1000
-print(f"Part 2: {part_two}, execution time: {part_two_time_in_ms}ms")
+part_two_time_in_ms = (time.time() - start) * 1000 - part_one_time_in_ms
+print(f"Part 2: {part_two}, execution time: {part_two_time_in_ms} ms")
+
+print(f"Total execution time: {(time.time() - start) * 1000} ms")
