@@ -1,8 +1,9 @@
 #!/bin/bash
 
 DEFAULT_DAY=$(date +%d)
-read -p "[*] Please enter day ($DEFAULT_DAY): " DAY
-DAY=${DAY:-$DEFAULT_DAY}
+DAY=${1:-$DEFAULT_DAY}
+
+echo "[*] Running day $DAY.."
 
 cd $DAY
 python3 $DAY.py
