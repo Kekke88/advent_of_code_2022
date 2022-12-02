@@ -36,9 +36,8 @@ outcome_map = {
     'CZ': 'X'
 }
 
-def calculate_score(opponent_hand: str, my_hand: str) -> list:
-    my_optimal_hand = outcome_map[opponent_hand + my_hand]
-    return [outcomes[opponent_hand + my_hand] + hand_scores[my_hand], outcomes[opponent_hand + my_optimal_hand] + hand_scores[my_optimal_hand]]
+def calculate_score(opponent_hand: str, my_hand: str) -> int:
+    return outcomes[opponent_hand + my_hand] + hand_scores[my_hand]
 
 start = time.time()
 total_score = 0
@@ -46,9 +45,9 @@ total_score_part_2 = 0
 with open('02.input') as f:
     for line in f.readlines():
         opponent_hand, my_hand = line.strip().split(" ", 2)
-        score, score_2 = calculate_score(opponent_hand=opponent_hand, my_hand=my_hand)
-        total_score += score
-        total_score_part_2 += score_2
+        part_2_hand = outcome_map[opponent_hand + my_hand]
+        total_score += calculate_score(opponent_hand=opponent_hand, my_hand=my_hand)
+        total_score_part_2 += calculate_score(opponent_hand=opponent_hand, my_hand=part_2_hand)
 
 part_one = total_score
 print(f"Part 1: {part_one}")
