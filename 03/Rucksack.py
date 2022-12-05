@@ -13,8 +13,8 @@ class Rucksack:
         item = self.get_common_item()
         return ord(item) - 64 + 26 if item.isupper() else ord(item) - 96
 
-    def get_badge(self, rucksack2, rucksack3) -> str:
-        
+    def get_all_items(self) -> str:
+        return self.compartment_1 + self.compartment_2
 
     def add_items(self, items: str):
         self.compartment_1 = items[:len(items)//2]
