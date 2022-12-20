@@ -11,7 +11,7 @@ from DistressSignal import Packet, DistressSignal
 distress_signal = DistressSignal()
 
 start = time.time()
-with open('13.example.input') as f:
+with open('13.input') as f:
     while True:
         packet_1_data = f.readline().replace("\n", "")
         packet_2_data = f.readline().replace("\n", "")
@@ -25,12 +25,11 @@ with open('13.example.input') as f:
         if not newline:
             break
 
-print(distress_signal)
-
-part_one = "WIP"
+part_one = distress_signal.validate_packets()
 print(f"Part 1: {part_one}")
 
-part_two = "WIP"
+distress_signal.add_packet(packet=Packet(packet_1=[[2]], packet_2=[[6]]))
+part_two = distress_signal.get_decoder_key()
 print(f"Part 2: {part_two}")
 
 print(f"Total execution time: {(time.time() - start) * 1000} ms")
